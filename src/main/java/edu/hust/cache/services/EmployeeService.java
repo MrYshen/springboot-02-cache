@@ -21,8 +21,8 @@ public class EmployeeService {
     @Cacheable(cacheNames = {"emp"})
     public Employee getEmp(Integer id){
         System.out.println("查询"+id+"号员工");
-        Employee employee = employeeMapper.getEmpById(id);
-        return employee;
+        Employee emp = employeeMapper.getEmpById(id);
+        return emp;
     }
 
     /**
