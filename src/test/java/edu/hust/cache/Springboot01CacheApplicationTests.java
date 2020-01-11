@@ -43,7 +43,7 @@ class Springboot01CacheApplicationTests {
     @Test
     public void test02(){
         Employee employee = employeeMapper.getEmpById(1);
-        redisTemplate.opsForValue().set("emp-01", employee);
+        redisTemplate.opsForValue().set("emp"+"-01", employee);
     }
 
     @Test
