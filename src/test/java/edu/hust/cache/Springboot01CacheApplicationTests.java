@@ -10,12 +10,14 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class Springboot01CacheApplicationTests {
 
-    @Autowired
+    @Resource
     EmployeeMapper employeeMapper;
 
     @Autowired
@@ -33,10 +35,10 @@ class Springboot01CacheApplicationTests {
     public void test01(){
 //        //给redis中保存数据
 //        stringRedisTemplate.opsForValue().append("msg", "hello");
-//        String s = stringRedisTemplate.opsForValue().get("msg");
-//        System.out.println(s);
-        stringRedisTemplate.opsForList().leftPush("mylist", "1");
-        stringRedisTemplate.opsForList().leftPush("mylist", "2");
+        String s = stringRedisTemplate.opsForValue().get("msg");
+        System.out.println(s);
+//        stringRedisTemplate.opsForList().leftPush("mylist", "a");
+//        stringRedisTemplate.opsForList().leftPush("mylist", "b");
 
     }
 
@@ -48,8 +50,8 @@ class Springboot01CacheApplicationTests {
 
     @Test
     void contextLoads() {
-        Employee employee = employeeMapper.getEmpById(1);
-        System.out.println(employee);
+//        Employee employee = employeeMapper.getEmpById(1);
+//        System.out.println(employee);
     }
 
 }

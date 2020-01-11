@@ -2,6 +2,8 @@ package edu.hust.cache.mapper;
 
 import edu.hust.cache.bean.Employee;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
+
 
 @Mapper
 public interface EmployeeMapper {
